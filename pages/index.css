@@ -3,5 +3,39 @@
 @import url(../blokcs/page/page.css);
 
 @import url(../blokcs/header/header.css);
-
 @import url(../blokcs/logo/logo.css);
+@import url(../blokcs/main/main.css);
+
+@import url(../blokcs/profile/profile.css);
+@import url(../blokcs/profile/__avatar-edit/profile__avatar-edit.css);
+@import url(../blokcs/profile/__avatar/profile__avatar.css);
+@import url(../blokcs/profile/__name/profile__name.css);
+@import url(../blokcs/profile/__about/profile__about.css);
+@import url(../blokcs/profile/__info/profile__info.css);
+@import url(../blokcs/profile/__btn-edit/profile__btn-edit.css);
+@import url(../blokcs/profile/__btn-add/profile__btn-add.css);
+
+@import url(../blokcs/elements/elements.css);
+@import url(../blokcs/elements/__list/elements__list.css);
+
+@import url(../blokcs/element/element.css);
+@import url(../blokcs/element/__image/element__image.css);
+@import url(../blokcs/element/__info/element__info.css);
+@import url(../blokcs/element/__caption/element__caption.css);
+@import url(../blokcs/element/__like-container/element__like-container.css);
+@import url(../blokcs/element/__btn-like/element__btn-like.css);
+
+@import url(../blokcs/footer/footer.css);
+@import url(../blokcs/footer/__author/footer__author.css);
+
+@import url(../blokcs/popup/popup.css);
+@import url(../blokcs/popup/__container/popup__container.css);
+@import url(../blokcs/popup/__content/popup__content.css);
+@import url(../blokcs/popup/__title/popup__title.css);
+@import url(../blokcs/popup/__fieldset/popup__fieldset.css);
+@import url(../blokcs/popup/__btn-save/popup__btn-save.css);
+@import url(..//blokcs/popup/__btn-close/popup__btn-close.css);
+@import url(../blokcs/popup/_opened/popup_opened.css);
+@import url(../blokcs/popup/__btn-close/);
+@import url(../blokcs/popup/__input/popup__input.css);
+

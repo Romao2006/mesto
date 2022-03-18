@@ -1,12 +1,20 @@
 .logo {
-top: 45px;
-padding-left 1;
+  width: 142px;
+  height: 33px;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
 }
 
+@media screen and (max-width: 425px) {
+  .logo {
+    width: 103.74px;
+    height: 24.4px;
+  }
+}
 
-@media screen and (min-width: 1280px) {
-    .logo {
-        width: calc((100vw - 320px) / (1280 - 320) * (142 - 103.7) + 103.7px);
-        padding-left: calc((100vw - 320px) / (1280 - 320) * (0 - 27) + 27px);
-      }
+@media screen and (max-width: 320px) {
+  .logo {
+    margin-left: 27px;
+  }
 }
