@@ -1,23 +1,35 @@
-const popupElement = document.querySelector('.popup');
-const navButton = document.querySelector('.profile__btn-edit');
-const closeButton = popupElement.querySelector('body .popup__btn-close');
+
+let editButton = document.querySelector('.profile__btn-edit');
+let closeButton = document.querySelector('.popup__btn-close');
+let submitButton = document.querySelector('.popup__btn-save');
 
 
-const ESC_KEY = "Escape";
-function openPopup() {
-    popupElement.classList.add('popup_opened');
-    document.addEventListener('keyup', onDocumentKeyUp)
+let popup = document.querySelector('.popup');
+let nameInput = document.querySelector('.popup__input-name');
+let aboutInput = document.querySelector('.popup__input-about');
+
+let profileName = document.querySelector('.profile__name');
+let profileAbout = document.querySelector('.profile__about');
+
+let form = document.querySelector('.popup__container');
+
+function editButtonHandler() {
+    popup.classList.add("popup_opened");
+    nameInput.value = profileName.textContent;
+    aboutInput.value = profileAbout.textContent;
 }
 
-function closePopup() {
-    popupElement.classList.remove('popup_opened');
-    document.removeEventListener('keyup', onDocumentKeyUp)
+function closeButtonHandler() {
+    popup.classList.remove("popup_opened");
 }
 
+function formSubmitHandler(evt) {
+    evt.preventDefault();
+    profileName.textContent = nameInput.value;
+    profileAbout.textContent = aboutInput.value;
+    closeButtonHandler();
+}
 
-navButton.addEventListener('click', (event) => {
-    openPopup()
-});
-
-closeButton.addEventListener('click', closePopup)
-
+closeButton.addEventListener("click", closeButtonHandler);
+editButton.addEventListener("click", editButtonHandler);
+form.addEventListener("submit", formSubmitHandler);
