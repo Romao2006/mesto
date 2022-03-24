@@ -5,8 +5,8 @@ let submitButton = document.querySelector('.popup__btn-save');
 
 
 let popup = document.querySelector('.popup');
-let nameInput = document.querySelector('.popup__input-name');
-let aboutInput = document.querySelector('.popup__input-about');
+let nameInput = document.querySelector('.popup__input_name_name');
+let aboutInput = document.querySelector('.popup__input_name_about');
 
 let profileName = document.querySelector('.profile__name');
 let profileAbout = document.querySelector('.profile__about');

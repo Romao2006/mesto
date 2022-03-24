@@ -1,5 +1,7 @@
 @import url(../vendor/normalize.css);
 
+@import url(../fonts/fonts.css);
+
 @import url(../blokcs/page/page.css);
 
 @import url(../blokcs/header/header.css);
