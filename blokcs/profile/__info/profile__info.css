@@ -15,5 +15,12 @@
 @media screen and (max-width: 880px) {
   .profile__info {
     justify-content: center;
+    margin: 30px auto 0 ;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .profile__info {
+    max-width: 75%;
   }
 }
