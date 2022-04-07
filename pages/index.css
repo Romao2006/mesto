@@ -17,15 +17,16 @@
 @import url(../blokcs/profile/__btn-edit/profile__btn-edit.css);
 @import url(../blokcs/profile/__btn-add/profile__btn-add.css);
 
-@import url(../blokcs/elements/elements.css);
-@import url(../blokcs/elements/__list/elements__list.css);
+@import url(../blokcs/cards/cards.css);
+@import url(../blokcs/cards/__list/cards__list.css);
 
-@import url(../blokcs/element/element.css);
-@import url(../blokcs/element/__image/element__image.css);
-@import url(../blokcs/element/__info/element__info.css);
-@import url(../blokcs/element/__caption/element__caption.css);
-@import url(../blokcs/element/__like-container/element__like-container.css);
-@import url(../blokcs/element/__btn-like/element__btn-like.css);
+@import url(../blokcs/card/card.css);
+@import url(../blokcs/card/__image/card__image.css);
+@import url(../blokcs/card/__info/card__info.css);
+@import url(../blokcs/card/__caption/card__caption.css);
+@import url(../blokcs/card/__btn-like/card__btn-like.css);
+@import url(../blokcs/card/__btn-like/_active/card__btn-like_active.css);
+@import url(../blokcs/card/__btn-delete/cards__btn-delete.css);
 
 @import url(../blokcs/footer/footer.css);
 @import url(../blokcs/footer/__author/footer__author.css);
@@ -40,4 +41,9 @@
 @import url(../blokcs/popup/_opened/popup_opened.css);
 @import url(../blokcs/popup/__btn-close/);
 @import url(../blokcs/popup/__input/popup__input.css);
+@import url(../blokcs/popup/__btn-save/_disabled/popup__btn-save_disabled.css);
+@import url(../blokcs/popup/_type/popup__container_type_preview.css);
+@import url(../blokcs/popup/__image/popup__image.css);
+@import url(../blokcs/popup/__content/popup__content.css);
+@import url(../blokcs/popup/__title/_type/popup__title_type_preview.css);
 

@@ -21,69 +21,64 @@
             </div>
             <button class="profile__btn-add" type="button" title="Добавить новую фотографию"></button>
         </section>
-        <section class="elements">
-            <ul class="elements__list">
-                <li class="element">
-                    <img class="element__image" src="./pictures/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" >
-                    <div class="element__info">
-                        <h2 class="element__caption">Карачаевск</h2>                      
-                            <button class="element__btn-like" type="button" title="Нравится"></button>                        
-                    </div>
-                </li>
-                <li class="element">
-                     <img class="element__image" src="./pictures/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
-                     <div class="element__info">
-                        <h2 class="element__caption">Гора Эльбрус</h2>                       
-                            <button class="element__btn-like" type="button" title="Нравится"></button>                           
-                    </div>
-                    </li>
-                <li class="element">
-                     <img class="element__image" src="./pictures/kirill-pershin-1556355-unsplash.png" alt="Домбай">
-                     <div class="element__info">
-                        <h2 class="element__caption">Домбай</h2>
-                            <button class="element__btn-like" type="button" title="Нравится"></button>                           
-                    </div>
-                    </li>
-                <li class="element">
-                     <img class="element__image" src="./pictures/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
-                     <div class="element__info">
-                        <h2 class="element__caption">Гора Эльбрус</h2>
-                            <button class="element__btn-like" type="button" title="Нравится"></button>                           
-                    </div>
-                    </li>
-                <li class="element">
-                     <img class="element__image" src="./pictures/kirill-pershin-1556355-unsplash.png" alt="Домбай">
-                     <div class="element__info">
-                        <h2 class="element__caption">Домбай</h2>
-                            <button class="element__btn-like" type="button" title="Нравится"></button>                           
-                    </div>
-                    </li>
-                <li class="element">
-                     <img class="element__image" src="./pictures/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-Черкеск">
-                     <div class="element__info">
-                        <h2 class="element__caption">Карачаево-Черкеск</h2>
-                            <button class="element__btn-like" type="button" title="Нравится"></button>                            
-                    </div>
-                </li>                                       
+        <section class="cards">
+            <ul class="cards__list">               
             </ul>
         </section>
         </main>    
         <footer class="footer">
             <p class="footer__author">© 2022. Mesto Russia</p>
         </footer> 
+
         <div class="popup">
             <div class="popup__container">
-              <form name="profileData" class="popup__form">
+              <form name="edit" class="popup__form">
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <fieldset class="popup__fieldset">
                     <input  class="popup__input popup__input_name_name"  type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required>                    
                     <input  class="popup__input popup__input_name_about"  type="text" name="about" placeholder="О себе" minlength="2" maxlength="200" required>                 
                 </fieldset>
-                <button class="popup__btn-save" type="submit" title="Сохранить">Сохранить</button>
+                <button class="popup__btn-save popup__btn-save_type_edit" type="submit" title="Сохранить">Сохранить</button>
               </form>
-              <button class="popup__btn-close" type="button" title="Закрыть"></button>
+              <button class="popup__btn-close popup__btn-close_type_edit" type="button" title="Закрыть"></button>
             </div>
           </div>
+
+          <div class="popup popup_type_new-card">
+            <div class="popup__container">
+              <h2 class="popup__title">Новое место</h2>
+              <form name="new-card" class="popup__form popup__form_type_new-card">
+                <input name="cardname" type="text" class="popup__input popup__input_name_card-name" value=""
+                  placeholder="Название">
+                <input name="cardlink" type="text" class=" popup__input popup__input_name_card-link" value=""
+                  placeholder="Ссылка на картинку">
+                <button type="submit" class="popup__btn-save popup__btn-save_type_new-card">Создать</button>
+              </form>
+              <button type="button" class="popup__btn-close popup__btn-close_type_new-card"></button>
+            </div>
+          </div>
+
+
+          <div class="popup popup_type_preview">
+            <div class="popup__content popup__container_type_preview">
+              <img class="popup__image" src="#" alt="#">
+              <h2 class="popup__title popup__title_type_preview"></h2>
+              <div class="popup__btn-close popup__btn-close_type_preview"></div>
+            </div>
+          </div>
+       
+          <template id="card-template">
+            <li class="card">
+              <img src="#" alt="#" class="card__image">
+              <button type="button" class="card__btn-delete"></button>
+              <div class="card__info">
+                <h2 class="card__caption"></h2>
+                <button type="button" class="card__btn-like"></button>
+              </div>
+            </li>
+          </template>
+
+        <script src="./script/cards.js"></script>
         <script src="./script/index.js"></script>                  
     </body>
 </html>
