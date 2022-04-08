@@ -1,18 +1,17 @@
-
-const openEditFormButton = document.querySelector('.profile__btn-edit');
-const closeEditFormButton = document.querySelector('.popup__btn-close');
-const submitEditFormButton = document.querySelector('.popup__btn-close_type_edit');
+const buttomOpenEditForm = document.querySelector('.profile__btn-edit');
+const buttomCloseEditForm = document.querySelector('.popup__btn-close');
+const buttomSubmitEditForm = document.querySelector('.popup__btn-close_type_edit');
 const popupInfo = document.querySelector('.popup');
 const nameInput = document.querySelector('.popup__input_name_name');
 const aboutInput = document.querySelector('.popup__input_name_about');
-const editForm = document.querySelector('.popup__form');
+const formEdit = document.querySelector('.popup__form');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
 
 const cardsList = document.querySelector(".cards__list");
 const popupNewCard = document.querySelector('.popup_type_new-card');
-const openNewCardFormButton = document.querySelector('.profile__btn-add');
-const closeAddFormButton = document.querySelector('.popup__btn-close_type_new-card');
+const buttomOpenNewCardForm = document.querySelector('.profile__btn-add');
+const buttomCloseAddForm = document.querySelector('.popup__btn-close_type_new-card');
 const newCardForm = document.querySelector('.popup__form_type_new-card');
 const newCardName = document.querySelector('.popup__input_name_card-name');
 const newCardLink = document.querySelector('.popup__input_name_card-link');
@@ -21,15 +20,15 @@ const cardTemplate = document.querySelector('#card-template').content;
 const preview = document.querySelector('.popup_type_preview');
 const previewImage = document.querySelector('.popup__image');
 const previewTitle = document.querySelector('.popup__title_type_preview');
-const closePreviewButton = document.querySelector('.popup__btn-close_type_preview');
+const buttomClosePreview = document.querySelector('.popup__btn-close_type_preview');
 
-openEditFormButton.addEventListener("click", editButtonHandler);
-closeEditFormButton.addEventListener("click", closeEditFormButtonHandler);
-editForm.addEventListener("submit", editFormSubmitHandler);
-openNewCardFormButton.addEventListener('click', openNewCardFormButtonHandler);
-closeAddFormButton.addEventListener("click", closeNewCardFormButtonHandler);
-newCardForm.addEventListener("submit", newCardFormSubmitHandler);
-closePreviewButton.addEventListener('click', closePreviewButtonHandler);
+buttomOpenEditForm.addEventListener("click", editButtonHandler);
+buttomCloseEditForm.addEventListener("click", closeEditFormButtonHandler);
+formEdit.addEventListener("submit", editFormSubmitHandler);
+buttomOpenNewCardForm.addEventListener('click', openNewCardFormButtonHandler);
+buttomCloseAddForm.addEventListener("click", closeNewCardFormButtonHandler);
+newCardForm.addEventListener("submit", handlerNewCardFormSubmit);
+buttomClosePreview.addEventListener('click', closePreviewButtonHandler);
 
 renderCards()
 function renderCards() {
@@ -47,7 +46,7 @@ function createCard(item) {
     cardImage.alt = item.name;
     cardElement.querySelector('.card__caption').textContent = item.name;
     cardElement.querySelector('.card__btn-like').addEventListener('click', likeButtonHandler);
-    cardImage.addEventListener('click', previewHandler);
+    cardImage.addEventListener('click', handlerPreview);
     cardElement.querySelector('.card__btn-delete').addEventListener('click', deleteButtonHandler);
     return cardElement;
 }
@@ -83,7 +82,7 @@ function closeNewCardFormButtonHandler() {
     closePopup(popupNewCard);
 }
 
-function newCardFormSubmitHandler(evt) {
+function handlerNewCardFormSubmit(evt) {
     evt.preventDefault();
     insertCard(createCard({
         name: newCardName.value,
@@ -102,7 +101,7 @@ function deleteButtonHandler(evt) {
     evt.target.closest('.card').remove();
 }
 
-function previewHandler(evt) {
+function handlerPreview(evt) {
     previewImage.src = evt.target.src;
     previewImage.alt = evt.target.alt;
     previewTitle.textContent = evt.target.alt;
