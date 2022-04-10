@@ -27,7 +27,7 @@ buttomCloseEditForm.addEventListener("click", closeEditFormButtonHandler);
 formEdit.addEventListener("submit", editFormSubmitHandler);
 buttomOpenNewCardForm.addEventListener('click', openNewCardFormButtonHandler);
 buttomCloseAddForm.addEventListener("click", closeNewCardFormButtonHandler);
-newCardForm.addEventListener("submit", handlerNewCardFormSubmit);
+newCardForm.addEventListener("submit", handleNewCardFormSubmit);
 buttomClosePreview.addEventListener('click', closePreviewButtonHandler);
 
 renderCards()
@@ -46,7 +46,7 @@ function createCard(item) {
     cardImage.alt = item.name;
     cardElement.querySelector('.card__caption').textContent = item.name;
     cardElement.querySelector('.card__btn-like').addEventListener('click', likeButtonHandler);
-    cardImage.addEventListener('click', handlerPreview);
+    cardImage.addEventListener('click', handlePreview);
     cardElement.querySelector('.card__btn-delete').addEventListener('click', deleteButtonHandler);
     return cardElement;
 }
@@ -82,7 +82,7 @@ function closeNewCardFormButtonHandler() {
     closePopup(popupNewCard);
 }
 
-function handlerNewCardFormSubmit(evt) {
+function handleNewCardFormSubmit(evt) {
     evt.preventDefault();
     insertCard(createCard({
         name: newCardName.value,
@@ -101,7 +101,7 @@ function deleteButtonHandler(evt) {
     evt.target.closest('.card').remove();
 }
 
-function handlerPreview(evt) {
+function handlePreview(evt) {
     previewImage.src = evt.target.src;
     previewImage.alt = evt.target.alt;
     previewTitle.textContent = evt.target.alt;
