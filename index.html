@@ -1,116 +1,94 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title>Mesto</title>
-</head>
-    <body class="page">        
-        <header class="header">
-            <img src="./images/logo.svg" class="logo" alt="логотип">
-        </header>       
-        <main class="main">
+    <link rel="stylesheet" href="pages/index.css">
+    </head>
+  <body>
+    <div class="page">
+      <!--Секция header-->
+      <header class="header">
+        <img src="images/header/logo.svg" alt="Логотип сайта" class="logo">       
+      </header>
+      <!--Секция main-->
+      <main class="main">
+        <!--Секция profile-->
         <section class="profile">
-            <img class="profile__avatar" src="./images/image.jpg" alt="Аватар">
-            <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто </h1>                 
-            <button class="profile__btn-edit" type="button" title="Редактировать профиль"></button>                  
-                <p class="profile__about">Исследователь океана</p>
-            </div>
-            <button class="profile__btn-add" type="button" title="Добавить новую фотографию"></button>
+          <img src="images/profile/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
+          <div class="profile__info">
+            <button type="button" class="button profile__button profile__button_action_edit"></button>
+            <p class="profile__name">Жак-Ив Кусто</p>
+            <p class="profile__about">Исследователь океана</p>
+          </div>
+          <button type="button" class="button profile__button profile__button_action_add"></button>
         </section>
-        <section class="cards">
-            <ul class="cards__list">               
-            </ul>
-        </section>
-        </main>    
-        <footer class="footer">
-            <p class="footer__author">© 2022. Mesto Russia</p>
-        </footer> 
-
-        <div class="popup">
-            <div class="popup__container">
-              <form name="edit" class="popup__form" novalidate>
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <fieldset class="popup__fieldset">
-                    <input  class="popup__input popup__input_name_name"  
-                    type="text" 
-                    name="name"
-                    id="name"
-                    placeholder="Имя" 
-                    minlength="2" 
-                    maxlength="40" 
-                    required>
-                    <span id="name-error" class="error"></span>
-                    <input  class="popup__input popup__input_name_about"
-                    type="text" 
-                    name="about"
-                    id="about"
-                    placeholder="О себе" 
-                    minlength="2" 
-                    maxlength="200" 
-                    required>
-                    <span id="about-error" class="error"></span>
-                </fieldset>
-                <button class="popup__btn-save popup__btn-save_type_edit" type="submit" title="Сохранить">Сохранить</button>
-              </form>
-              <button class="popup__btn-close popup__btn-close_type_edit" type="button" title="Закрыть"></button>
-            </div>
-          </div>
-
-          <div class="popup popup_type_new-card">
-            <div class="popup__container">
-              <h2 class="popup__title">Новое место</h2>
-              <form name="new-card" class="popup__form popup__form_type_new-card" novalidate>
-                <input name="cardname"
-                       id="cardname"
-                       type="text"
-                       class="popup__input popup__input_name_card-name"
-                       value=""
-                       placeholder="Название"
-                       minlength="2"
-                       maxlength="30"
-                       required>
-                  <span id="cardname-error" class="error"></span>
-                <input name="cardlink"
-                       id="cardlink"
-                       type="url"
-                       class=" popup__input popup__input_name_card-link"
-                       value=""
-                        placeholder="Ссылка на картинку"
-                       required>
-                  <span id="cardlink-error" class="error"></span>
-                <button type="submit" class="popup__btn-save popup__btn-save_type_new-card">Создать</button>
-              </form>
-              <button type="button" class="popup__btn-close popup__btn-close_type_new-card"></button>
-            </div>
-          </div>
-
-
-          <div class="popup popup_type_preview popup_type_image">
-            <div class="popup__content">
-              <img class="popup__image" src="#" alt="#">
-              <h2 class="popup__title popup__title_type_preview"></h2>
-              <div class="popup__btn-close popup__btn-close_type_preview"></div>
-            </div>
-          </div>
-       
-          <template id="card-template">
-            <li class="card">
-              <img src="#" alt="#" class="card__image">
-              <button type="button" class="card__btn-delete"></button>
-              <div class="card__info">
-                <h2 class="card__caption"></h2>
-                <button type="button" class="card__btn-like"></button>
-              </div>
-            </li>
-          </template>
-
-        <script src="./script/cards.js"></script>
-        <script src="./script/validate.js"></script>
-        <script src="./script/index.js"></script>
-
-    </body>
+        <!--Секция elements-->
+        <ul class="elements">
+        </ul>
+      </main>
+      <!--Секция footer-->
+      <footer class="footer">
+        <p class="footer__copyright">2022 Mesto Russia</p>
+      </footer>
+      <!--Попап imagePopup-->
+      <div class="photo popup" id="image-popup">
+        <figure class="photo__figure">
+          <button type="reset" class="photo__close button button_close"></button>
+          <img class="photo__img" src="" alt="">
+          <figcaption class="photo__caption"></figcaption>
+        </figure>
+      </div>
+      <!--Попап userForm-->
+      <div class="popup" id="user-popup">
+        <form class="popup__container" id="user-form" novalidate>
+          <button type="reset" class="button button_close popup__button popup__button_close"></button>
+          <fieldset class="popup__input-container">
+            <legend class="popup__heading">Редактировать профиль</legend>
+            <label for="user-name" class="popup__field">
+              <input type="text" class="popup__input" id="user-name" name="user-name" placeholder="Имя" minlength="2" maxlength="40" pattern="" required>
+              <span class='popup__input-error' id='user-name-error'></span>
+            </label>
+            <label for="user-info" class="popup__field">
+              <input type="text" class="popup__input" id="user-info" name="user-info" placeholder="О себе" minlength="2" maxlength="200" required>
+              <span class='popup__input-error' id='user-info-error'></span>
+            </label>
+          </fieldset>
+          <button type="submit" class="button popup__button popup__button_submit">Сохранить</button>
+        </form>
+      </div>
+      <!--Попап photoForm-->
+      <div class="popup" id="photo-popup">
+        <form class="popup__container" id="photo-form" novalidate>
+          <button type="reset" class="button button_close popup__button popup__button_close"></button>
+          <fieldset class="popup__input-container">
+            <legend class="popup__heading">Новое место</legend>
+            <label for="photo-name" class="popup__field">
+              <input class="popup__input" id="photo-name" name="photo-name" placeholder="Название" minlength="1" maxlength="30" required>
+              <span class='popup__input-error' id='photo-name-error'></span>
+           </label>
+            <label for="photo-link" class="popup__field">
+              <input type="url" class="popup__input" id="photo-link" name="photo-link" placeholder="Ссылка на картинку" required>
+              <span class='popup__input-error' id='photo-link-error'></span>
+            </label>
+          </fieldset>
+          <button type="submit" class="button popup__button popup__button_submit">Создать</button>
+        </form>
+      </div>
+    </div>
+  <!--Card template-->
+  <template id="card-template">
+    <li class="card">
+      <button type="button" class="card__delete button"></button>
+      <div class="card__container">
+        <img src="" alt="" class="card__photo">
+      </div>
+      <h2 class="card__caption"></h2>
+      <button type="button" class="card__like button"></button>
+    </li>
+  </template>
+  <!--Скрипт-->
+  <script type="module" src="scripts/index.js"></script>
+  </body>
 </html>
