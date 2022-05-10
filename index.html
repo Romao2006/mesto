@@ -10,7 +10,8 @@
     <div class="page">
       <!--Секция header-->
       <header class="header">
-        <img src="images/header/logo.svg" alt="Логотип сайта" class="logo">       
+        <img src="images/header/logo.svg" alt="Логотип сайта" class="logo">
+        <h1 class="visually-hidden">Место: интерактивный сервис для добавления фотографий</h1>
       </header>
       <!--Секция main-->
       <main class="main">
@@ -30,13 +31,13 @@
       </main>
       <!--Секция footer-->
       <footer class="footer">
-        <p class="footer__copyright">2022 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
       <!--Попап imagePopup-->
       <div class="photo popup" id="image-popup">
         <figure class="photo__figure">
           <button type="reset" class="photo__close button button_close"></button>
-          <img class="photo__img" src="#" alt="">
+          <img class="photo__img" src="" alt="">
           <figcaption class="photo__caption"></figcaption>
         </figure>
       </div>
@@ -47,7 +48,7 @@
           <fieldset class="popup__input-container">
             <legend class="popup__heading">Редактировать профиль</legend>
             <label for="user-name" class="popup__field">
-              <input type="text" class="popup__input" id="user-name" name="user-name" placeholder="Имя" minlength="2" maxlength="40" pattern="" required>
+              <input type="text" class="popup__input" id="user-name" name="user-name" placeholder="Имя" minlength="2" maxlength="40" pattern="[А-Яа-яA-Za-z -]{1,}" required>
               <span class='popup__input-error' id='user-name-error'></span>
             </label>
             <label for="user-info" class="popup__field">
@@ -82,7 +83,7 @@
     <li class="card">
       <button type="button" class="card__delete button"></button>
       <div class="card__container">
-        <img src="#" alt="" class="card__photo">
+        <img src="" alt="" class="card__photo">
       </div>
       <h2 class="card__caption"></h2>
       <button type="button" class="card__like button"></button>

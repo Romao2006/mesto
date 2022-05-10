@@ -1,54 +1,10 @@
-@import url('__container/card__container.css');
-@import url('__photo/card__photo.css');
-@import url('__delete/card__delete.css');
-@import url('__caption/card__caption.css');
-@import url('__like/card__like.css');
-@import url('__like/_active/card__like_active.css');
-
 .card {
-  /* width: 100%; */
-  min-height: 361px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 282px;
+  margin: 0 auto;
+  overflow: hidden;
   border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  background-color: #fff;
-  color: #000;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  display: grid;
-  grid-column-gap: 10px;
-  grid-template-rows: min-content 1fr;
-  grid-template-columns: 1fr min-content;
-  grid-template-areas:
-    'photo photo'
-    'caption like';
-}
-
-@media screen and (max-width: 980px) {
-  .card {
-    min-height: 36.837vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-    min-height: 54.45vw;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .card {
-    min-height: 110.11vw;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .card {
-    min-height: 361px;
-  }
+  background: linear-gradient(to top, #ccc 0%, #f6f6f6 75%, #fff 100%);
 }
